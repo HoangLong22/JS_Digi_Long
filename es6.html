@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<input type="text" name="" id="input">
+	<h1 id="demo"></h1>
+	<button id="submit" onclick="myFuncion()">Nhập</button>
+	<button id="submit" onclick="myFuncionFind()">Tìm</button>
+	<script type="text/javascript">
+	function myFuncion() {
+		var text = document.getElementById("input").value;
+		let myPromise = new Promise(function(myResolve, myReject) {
+		setTimeout(function(){ myResolve(text); }, 2000);
+		});
+		myPromise.then(function(value) {
+		  document.getElementById("demo").innerHTML = value;
+		});
+	}
+
+	function myFuncionFind(){
+		var numbers = [4, 9, 16, 25, 29];
+		var first = numbers.find(myFuncionFind);	
+		var text = document.getElementById("input").value;
+		document.getElementById("demo").innerHTML = "Số lớn hơn số " + text+ " trong mảng là: " + first;
+		function myFuncionFind(value, index, array) {
+			var text = document.getElementById("input").value;
+		  	return value > text;
+		}
+	}
+	</script>
+</body>
+</html>

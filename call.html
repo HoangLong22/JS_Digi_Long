@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		var obj = {text:"dãy số: "};
+		var addToThis = function(a) {
+		    return this.text + a;
+		};
+		var arr = ['long','bn'];
+		document.write(addToThis.call(obj, arr));
+	</script>
+</body>
+</html>

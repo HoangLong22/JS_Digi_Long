@@ -1,0 +1,11 @@
+.page-header h3 {
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 25px;
+    background-color: #d6394b;
+    color: #fff;
+    font-weight: 700;
+}
+.card-body {
+	text-align: center;
+}

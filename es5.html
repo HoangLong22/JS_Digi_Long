@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<input type="text" name="text" id="input">
+	<p id="demo"></p>
+	<button class="btn btn success" onclick="myFunction()">Kiểm tra</button>
+	<button class="btn btn success" onclick="myFunctions()">Array.Map</button>
+	<button class="btn btn success" onclick="myFunctionFor()">ForEach</button>
+	<button class="btn btn success" onclick="myFunctionFilter()">Filter</button>
+	<button class="btn btn success" onclick="myFunctionEvery()">Check</button>
+	<button class="btn btn success" onclick="myFunctionSome()">Check Some</button>
+	<button class="btn btn success" onclick="myFunctionIndex()">Vị trí</button>
+<script type="text/javascript">
+	function myFunction() {
+  var str = document.getElementById("input").value;
+  var x = document.getElementById("demo");
+  //document.write(str.trim());
+  x.innerHTML = str.trim();
+}
+var persons = [
+  {firstname : "Long", lastname: "Nguyễn"},
+  {firstname : "Báu", lastname: "Đào"},
+  {firstname : "Cường", lastname: "Ngô"}
+];
+
+function getFullName(item) {
+  var fullname = [item.firstname,item.lastname].join(" ");
+  return fullname;
+}
+
+function myFunctions() {
+  document.getElementById("demo").innerHTML = persons.map(getFullName);
+}
+
+function myFunctionFor() {
+var txt = "";
+var numbers = ["Long", "Nguyễn", "22/02/1997"];
+numbers.forEach(myFunctionFor);
+document.getElementById("demo").innerHTML = txt;
+
+function myFunctionFor(value) {
+  txt = txt + value + "<br>"; 
+}
+}
+
+ function myFunctionFilter(){
+	var text = ["Long", "Linh", "Báu", "Cường"];
+	var search = text.filter(myFunctionFilter);
+	document.getElementById("demo").innerHTML = search;
+	function myFunctionFilter(value,index, array){
+	var str = document.getElementById("input").value;
+		return value == str;
+	}
+}
+
+function myFunctionEvery(){
+	var text = [10,25,17,85,9];
+	var check = text.every(myFunctionEvery);
+	document.getElementById("demo").innerHTML = "Số bạn nhập có lớn hơn các số trong các số(10,25,17,85,9): " + check;
+	function myFunctionEvery(value,index, array){
+	var strs = document.getElementById("input").value;
+		return value < strs;
+	}
+}
+
+function myFunctionSome(){
+	var text = [10,25,17,85,9];
+	var check = text.some(myFunctionSome);
+	document.getElementById("demo").innerHTML = "Trong các số(10,25,17,85,9) có số lớn hơn số bạn nhập: " + check;
+	function myFunctionSome(value,index, array){
+	var str = document.getElementById("input").value;
+		return value > str;
+	}
+}
+
+function myFunctionIndex() {
+var fruits = ["Long", "Linh", "Báu", "Cường"];
+var text =  document.getElementById("input").value;
+var a = fruits.indexOf(text);
+document.getElementById("demo").innerHTML = "Apple is found in position " + a;
+}
+</script>
+</body>
+</html>
